@@ -1,6 +1,6 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import { UserRepository } from '../typeorm/repositories/UsersRepository';
+import { UserRepository } from '../typeorm/repositories/UserRepository';
 
 interface IRequest {
   id: string;
