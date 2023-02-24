@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import CreateUserService from '../typeorm/services/CreateUserService';
-import DeleteUserService from '../typeorm/services/DeleteUserService';
-import ListUserService from '../typeorm/services/ListUserService';
-import ShowUserService from '../typeorm/services/ShowUserService';
-import UpdateUserService from '../typeorm/services/UpdateUserService';
+import CreateUserService from '../services/CreateUserService';
+import DeleteUserService from '../services/DeleteUserService';
+import ListUserService from '../services/ListUserService';
+import ShowUserService from '../services/ShowUserService';
+import UpdateUserService from '../services/UpdateUserService';
 
 export default class UsersController {
   public async index(request: Request, response: Response): Promise<Response> {
