@@ -23,6 +23,7 @@
     "prefer-arrow-callback": "off",
     "import/prefer-default-export": "off",
     "@typescript-eslint/no-throw-literal": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "@typescript-eslint/naming-convention": "off"
   }
 }

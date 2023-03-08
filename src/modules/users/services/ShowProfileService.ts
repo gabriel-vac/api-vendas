@@ -4,14 +4,14 @@ import User from '../typeorm/entities/User';
 import { UserRepository } from '../typeorm/repositories/UserRepository';
 
 interface IRequest {
-  id: string;
+  user_id: string;
 }
 
-class ShowUserService {
-  public async execute({ id }: IRequest): Promise<User> {
+class ShowProfileService {
+  public async execute({ user_id }: IRequest): Promise<User> {
     const userRepository = getCustomRepository(UserRepository);
 
-    const user = await userRepository.findOne(id);
+    const user = await userRepository.findById(user_id);
 
     if (!user) {
       throw new AppError('User not found', 404);
@@ -21,4 +21,4 @@ class ShowUserService {
   }
 }
 
-export default ShowUserService;
+export default ShowProfileService;
