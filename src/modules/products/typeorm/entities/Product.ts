@@ -1,15 +1,21 @@
+import OrdersProducts from '@modules/orders/typeorm/entities/OrdersProducts';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity('products')
 class Product {
   @PrimaryGeneratedColumn('uuid')
   id: number;
+
+  // one product can be relate to many registers from orders products
+  @OneToMany(() => OrdersProducts, (order_products) => order_products.product)
+  order_products: OrdersProducts[];
 
   @Column()
   name: string;
