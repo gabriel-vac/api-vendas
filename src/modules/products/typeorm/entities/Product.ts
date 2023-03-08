@@ -1,4 +1,4 @@
-import OrdersProducts from '@modules/orders/typeorm/entities/OrdersProducts';
+/* eslint-disable import/no-cycle */
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
+import OrdersProducts from '../../../orders/typeorm/entities/OrdersProducts';
 
 @Entity('products')
 class Product {
