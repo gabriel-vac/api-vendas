@@ -9,11 +9,13 @@ import { pagination } from 'typeorm-pagination';
 import uploadConfig from '@config/upload';
 import routes from './routes';
 import '@shared/typeorm';
+import { rateLimiter } from './middlewares/rateLimiter';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(rateLimiter);
 
 app.use(pagination);
 app.use('/files', express.static(uploadConfig.directory)); // example http://localhost:3333/files/4ff057356f51623c1254-git.jpeg
@@ -32,6 +34,7 @@ app.use(
       });
     }
 
+    // eslint-disable-next-line no-console
     console.log({ error });
     return response.status(500).json({
       status: 'error',
