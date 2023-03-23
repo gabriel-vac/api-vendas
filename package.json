@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "lint": "eslint 'src/**/*.ts'"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -44,6 +45,7 @@
     "handlebars": "^4.7.7",
     "ioredis": "^5.3.1",
     "jsonwebtoken": "^9.0.0",
+    "mime": "^3.0.0",
     "multer": "^1.4.5-lts.1",
     "node": "^19.6.1",
     "nodemailer": "^6.9.1",
